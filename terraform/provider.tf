@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
     bucket = "chetanakatta"
-    key    = "expense-infra-dev-frontend"
+    key    = "expense-frontend-deploy"
     region = "us-east-1"
     dynamodb_table = "daws-78s-locking"
   }
