@@ -27,7 +27,7 @@ resource "null_resource" "frontend" {
         type     = "ssh"
         user     = "ec2-user"
         password = "DevOps321"
-        host     = module.frontend.private_ip
+        host     = module.frontend.public_ip
     }
 
     provisioner "file" {
@@ -161,7 +161,7 @@ resource "aws_autoscaling_policy" "frontend" {
       predefined_metric_type = "ASGAverageCPUUtilization"
     }
 
-    target_value = 10.0
+    target_value = 80.0
   }
 }
 
